@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <h2>Listings</h2>
+                    <div class="breadcrumb-option">
+                        <a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a>
+                        <span>Listings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section Begin -->
+<!-- Property Section Begin -->
+<section class="property-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="property-sidebar">
+
+                    <div class="best-agents">
+                        <h4>Best Agents</h4>
+                        <a href="#" class="ba-item">
+                            <div class="ba-pic">
+                                <img src="{% static 'img/properties/best-agent-1.jpg' %}" alt="">
+                            </div>
+                            <div class="ba-text">
+                                <h5>Lester Bradley</h5>
+                                <span>Company Agents</span>
+                                <p class="property-items">6 property </p>
+                            </div>
+                        </a>
+                        <a href="#" class="ba-item">
+                            <div class="ba-pic">
+                                <img src="{% static 'img/properties/best-agent-2.jpg' %}" alt="">
+                            </div>
+                            <div class="ba-text">
+                                <h5>Janie Blair</h5>
+                                <span>Company Agents</span>
+                                <p class="property-items">6 property </p>
+                            </div>
+                        </a>
+                        <a href="#" class="ba-item">
+                            <div class="ba-pic">
+                                <img src="{% static 'img/properties/best-agent-3.jpg' %}" alt="">
+                            </div>
+                            <div class="ba-text">
+                                <h5>Sophia Cole</h5>
+                                <span>Marketing & Ceo</span>
+                                <p class="property-items">6 property </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <h4 class="property-title">Property</h4>
+                <div class="property-list">
+                    <div class="single-property-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="property-pic">
+                                    <img src="{% static 'img/properties/property-1.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="property-text">
+                                    <div class="s-text">For Sale</div>
+                                    <h5 class="r-title">Villa 9721 Glen Creek</h5>
+                                    <div class="room-price">
+                                        <span>Start From:</span>
+                                        <h5>$3.000.000</h5>
+                                    </div>
+                                    <div class="properties-location"><i class="icon_pin"></i> 9721 Glen Creek Ave.
+                                        Ballston Spa, NY
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore.</p>
+                                    <ul class="room-features">
+                                        <li>
+                                            <i class="fa fa-arrows"></i>
+                                            <p>5201 sqft</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bed"></i>
+                                            <p>8 Bed Room</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bath"></i>
+                                            <p>7 Baths Bed</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-car"></i>
+                                            <p>1 Garage</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-property-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="property-pic">
+                                    <img src="{% static 'img/properties/property-2.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="property-text">
+                                    <div class="s-text">For Sale</div>
+                                    <h5 class="r-title">Villa 9721 Glen Creek</h5>
+                                    <div class="room-price">
+                                        <span>Start From:</span>
+                                        <h5>$3.000.000</h5>
+                                    </div>
+                                    <div class="properties-location"><i class="icon_pin"></i> 9721 Glen Creek Ave.
+                                        Ballston Spa, NY
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore.</p>
+                                    <ul class="room-features">
+                                        <li>
+                                            <i class="fa fa-arrows"></i>
+                                            <p>5201 sqft</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bed"></i>
+                                            <p>8 Bed Room</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bath"></i>
+                                            <p>7 Baths Bed</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-car"></i>
+                                            <p>1 Garage</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-property-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="property-pic">
+                                    <img src="{% static 'img/properties/property-3.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="property-text">
+                                    <div class="s-text">For Sale</div>
+                                    <h5 class="r-title">Villa 9721 Glen Creek</h5>
+                                    <div class="room-price">
+                                        <span>Start From:</span>
+                                        <h5>$3.000.000</h5>
+                                    </div>
+                                    <div class="properties-location"><i class="icon_pin"></i> 9721 Glen Creek Ave.
+                                        Ballston Spa, NY
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore.</p>
+                                    <ul class="room-features">
+                                        <li>
+                                            <i class="fa fa-arrows"></i>
+                                            <p>5201 sqft</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bed"></i>
+                                            <p>8 Bed Room</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bath"></i>
+                                            <p>7 Baths Bed</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-car"></i>
+                                            <p>1 Garage</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-property-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="property-pic">
+                                    <img src="{% static 'img/properties/property-4.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="property-text">
+                                    <div class="s-text">For Sale</div>
+                                    <h5 class="r-title">Villa 9721 Glen Creek</h5>
+                                    <div class="room-price">
+                                        <span>Start From:</span>
+                                        <h5>$3.000.000</h5>
+                                    </div>
+                                    <div class="properties-location"><i class="icon_pin"></i> 9721 Glen Creek Ave.
+                                        Ballston Spa, NY
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore.</p>
+                                    <ul class="room-features">
+                                        <li>
+                                            <i class="fa fa-arrows"></i>
+                                            <p>5201 sqft</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bed"></i>
+                                            <p>8 Bed Room</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bath"></i>
+                                            <p>7 Baths Bed</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-car"></i>
+                                            <p>1 Garage</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-pagination">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Property Section End -->
+
+<!-- Partner Carousel Section Begin -->
+<div class="partner-section">
+    <div class="container">
+        <div class="partner-carousel owl-carousel">
+            <a href="#" class="partner-logo">
+                <div class="partner-logo-tablecell">
+                    <img src="{% static 'img/partner/partner-1.png' %}" alt="">
+                </div>
+            </a>
+            <a href="#" class="partner-logo">
+                <div class="partner-logo-tablecell">
+                    <img src="{% static 'img/partner/partner-2.png' %}" alt="">
+                </div>
+            </a>
+            <a href="#" class="partner-logo">
+                <div class="partner-logo-tablecell">
+                    <img src="{% static 'img/partner/partner-3.png' %}" alt="">
+                </div>
+            </a>
+            <a href="#" class="partner-logo">
+                <div class="partner-logo-tablecell">
+                    <img src="{% static 'img/partner/partner-4.png' %}" alt="">
+                </div>
+            </a>
+            <a href="#" class="partner-logo">
+                <div class="partner-logo-tablecell">
+                    <img src="{% static 'img/partner/partner-5.png' %}" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Partner Carousel Section End -->
+
+{% endblock %}

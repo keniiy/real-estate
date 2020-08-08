@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'realtors.apps.RealtorsConfig',
+    'listings.apps.ListingsConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,8 +78,11 @@ WSGI_APPLICATION = 'encipherer_real_estate.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'realestatedb',
+        'USER': 'postgres',
+        'PASSWORD': '1234567890',
+        'HOST': 'localhost'
     }
 }
 
