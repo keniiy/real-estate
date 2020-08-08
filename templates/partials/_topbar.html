@@ -1,0 +1,84 @@
+{% load static %}
+ <header class="header-section">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <nav class="main-menu">
+                            <ul>
+                                <li
+                                    {% if '/' == request.path %} class="active" { % else %} {% endif %}>
+                                    <a href="{% url 'index' %}">Home</a>
+                                </li>
+                                <li
+                                    {% if 'about' in request.path %} class="active" { % else %} {% endif %}>
+                                    <a href="{% url 'about' %}">About</a>
+                                </li>
+                                <li
+                                    {% if 'listing' in request.path %} class="active" { % else %} {% endif %}>
+                                    <a href="{% url 'about' %}">Listings</a>
+                                </li>
+                                <li
+                                    {% if 'blog' in request.path %} class="active" { % else %} {% endif %}>
+                                    <a href="./blog.html">Blog</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="top-right">
+                            <div class="language-option">
+                                <img src="{% static 'img/flag.png' %}" alt="">
+                                <span>English</span>
+                                <i class="fa fa-angle-down"></i>
+                                <div class="flag-dropdown">
+                                    <ul>
+                                        <li><a href="#">English</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="#" class="property-sub">Submit Property</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-logo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="logo">
+                            <a href="./index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="nav-logo-right">
+                            <ul>
+                                <li>
+                                    <i class="icon_phone"></i>
+                                    <div class="info-text">
+                                        <span>Phone:</span>
+                                        <p>(+12) 345 6789</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="icon_map"></i>
+                                    <div class="info-text">
+                                        <span>Address:</span>
+                                        <p>16 Creek Ave, <span>NY</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="icon_mail"></i>
+                                    <div class="info-text">
+                                        <span>Email:</span>
+                                        <p>Info.cololib@gmail.com</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
