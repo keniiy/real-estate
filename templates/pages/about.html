@@ -26,7 +26,7 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <span>About Us</span>
-                        <h2>Hello! Welcome to Azenta<span>.</span></h2>
+                        <h2>Hello! Welcome to Encpiphere Real Estate<span>.</span></h2>
                         <p>There is no better advertisement campaign that is low cost and also successful at the same
                             time. Great business ideas when utilized effectively can save lots of money. This is not
                             only easy for those who work full-time as an advertiser, but also for those who work from
@@ -69,31 +69,24 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Testimonials</h2>
+                        <h2>Realtor of the month</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="testimonial-slider owl-carousel">
+                        {% for mvp in mvp_realtor %}
                         <div class="ts-item">
-                            <p>Create a list with all possible keywords that fit to your product, service or business
-                                field. The more the better. So you will get also a lot of keywords which you mus pay for
-                                only the minimal commandment of 5 cents</p>
+                            <img src="{{ mvp.photo.url }}" height="400" width="200" overflow="hidden" style="border-radius:500%">
+                            <p>{{ mvp.description }}</p>
                             <div class="ti-author">
-                                <h5>John Smith</h5>
+                                <h5>{{ mvp.name }}</h5>
+                                <h5>{{ mvp.email }}</h5>
                                 <span>CEO deercreative</span>
                             </div>
                         </div>
-                        <div class="ts-item">
-                            <p>Create a list with all possible keywords that fit to your product, service or business
-                                field. The more the better. So you will get also a lot of keywords which you mus pay for
-                                only the minimal commandment of 5 cents</p>
-                            <div class="ti-author">
-                                <h5>John Smith</h5>
-                                <span>CEO deercreative</span>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -114,71 +107,21 @@
             </div>
             <div class="row">
                 <div class="agent-carousel owl-carousel">
+                {% for realtor in realtors %}
                     <div class="col-lg-3">
                         <div class="single-agent">
                             <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-1.jpg' %}" alt="">
+                                <img src="{{ realtor.photo.url }}" alt="">
                                 <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="www.twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="www.instagram.com" class="instagram"><i class="fa fa-instagram"></i></a>
+                                    <a href="www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
                                 </div>
                             </div>
-                            <h5>Matthew Robbins <span>Founder & Ceo</span></h5>
+                            <h5>{{ realtor.name }} <span>Founder & Ceo</span></h5>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="single-agent">
-                            <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-2.jpg' %}" alt="">
-                                <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                </div>
-                            </div>
-                            <h5>Tillie Burns <span>Marketing Manager</span></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="single-agent">
-                            <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-3.jpg' %}" alt="">
-                                <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                </div>
-                            </div>
-                            <h5>Derrick Lawson <span>Company Agents</span></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="single-agent">
-                            <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-4.jpg' %}" alt="">
-                                <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                </div>
-                            </div>
-                            <h5>Clifford Colon <span>Saler Manager</span></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="single-agent">
-                            <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-5.jpg' %}" alt="">
-                                <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                </div>
-                            </div>
-                            <h5>Clifford Colon <span>Saler Manager</span></h5>
-                        </div>
-                    </div>
+                {% endfor %}
                 </div>
             </div>
         </div>

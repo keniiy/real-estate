@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
 <!-- Hero Section Begin -->
     <section class="hero-section">
@@ -223,236 +224,63 @@
             </div>
             <div class="row">
                 <div class="feature-carousel owl-carousel">
-                    <div class="col-lg-4">
+                {% if featured %}
+                    {% for feature in featured %}
+                        <div class="col-lg-4">
                         <div class="feature-item">
-                            <div class="fi-pic set-bg" data-setbg="{% static 'img/feature/feature-1.jpg' %}">
+                           <div class="fi-pic set-bg" data-setbg="{{ feature.photo_main.url }}">
                                 <div class="pic-tag">
-                                    <div class="f-text">feauture</div>
+                                    <div class="f-text">Featured</div>
                                     <div class="s-text">For Sale</div>
                                 </div>
                                 <div class="feature-author">
                                     <div class="fa-pic">
-                                        <img src="{% static 'img/feature/f-author-1.jpg' %}" alt="">
+                                        <img src="{{ feature.realtor.photo.url }}" alt="">
                                     </div>
                                     <div class="fa-text">
-                                        <span>Rena Simmons</span>
+                                        <span>{{ feature.realtor }}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="fi-text">
                                 <div class="inside-text">
-                                    <h4>French Riviera Villa</h4>
+                                    <a href="{% url 'listing' feature.id %}"><h4>{{ feature.title |truncatewords:10|linebreaks }}</h4></a>
                                     <ul>
-                                        <li><i class="fa fa-map-marker"></i> 180 York Road, London, UK</li>
-                                        <li><i class="fa fa-tag"></i> Villa</li>
+                                        <li><i class="fa fa-map-marker"></i>{{ feature.state }}</li>
+                                        <li><i class="fa fa-tag"></i> {{ feature.city }}</li>
                                     </ul>
-                                    <h5 class="price">$5900<span>/month</span></h5>
+                                    <h5 class="price">₦{{ feature.price | intcomma }}</h5>
                                 </div>
                                 <ul class="room-features">
                                     <li>
                                         <i class="fa fa-arrows"></i>
-                                        <p>780 sqft</p>
+                                        <p>{{ feature.sqft }} sqft</p>
                                     </li>
                                     <li>
                                         <i class="fa fa-bed"></i>
-                                        <p>4</p>
+                                        <p>{{ feature.bedrooms }}</p>
                                     </li>
                                     <li>
                                         <i class="fa fa-bath"></i>
-                                        <p>3</p>
+                                        <p>{{ feature.bathrooms }}</p>
                                     </li>
                                     <li>
                                         <i class="fa fa-car"></i>
-                                        <p>2</p>
+                                        <p>{{ feature.garage }}</p>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="feature-item">
-                            <div class="fi-pic set-bg" data-setbg="{% static 'img/feature/feature-2.jpg' %}">
-                                <div class="pic-tag">
-                                    <div class="f-text">feauture</div>
-                                    <div class="s-text">For Sale</div>
-                                </div>
-                                <div class="feature-author">
-                                    <div class="fa-pic">
-                                        <img src="{% static 'img/feature/f-author-2.jpg' %}" alt="">
-                                    </div>
-                                    <div class="fa-text">
-                                        <span>Rena Johnston</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fi-text">
-                                <div class="inside-text">
-                                    <h4>French Riviera Villa</h4>
-                                    <ul>
-                                        <li><i class="fa fa-map-marker"></i> 180 York Road, London, UK</li>
-                                        <li><i class="fa fa-tag"></i> Villa</li>
-                                    </ul>
-                                    <h5 class="price">$5900<span>/month</span></h5>
-                                </div>
-                                <ul class="room-features">
-                                    <li>
-                                        <i class="fa fa-arrows"></i>
-                                        <p>780 sqft</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bed"></i>
-                                        <p>4</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bath"></i>
-                                        <p>3</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-car"></i>
-                                        <p>2</p>
-                                    </li>
-                                </ul>
-                            </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <span>No Listing From Our Agents</span>
+                            <h2>No Featured Properties</h2>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="feature-item">
-                            <div class="fi-pic set-bg" data-setbg="{% static 'img/feature/feature-3.jpg' %}">
-                                <div class="pic-tag">
-                                    <div class="f-text">feauture</div>
-                                    <div class="s-text">For Sale</div>
-                                </div>
-                                <div class="feature-author">
-                                    <div class="fa-pic">
-                                        <img src="{% static 'img/feature/f-author-3.jpg' %}" alt="">
-                                    </div>
-                                    <div class="fa-text">
-                                        <span>Jonathan Walters</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fi-text">
-                                <div class="inside-text">
-                                    <h4>French Riviera Villa</h4>
-                                    <ul>
-                                        <li><i class="fa fa-map-marker"></i> 180 York Road, London, UK</li>
-                                        <li><i class="fa fa-tag"></i> Villa</li>
-                                    </ul>
-                                    <h5 class="price">$5900<span>/month</span></h5>
-                                </div>
-                                <ul class="room-features">
-                                    <li>
-                                        <i class="fa fa-arrows"></i>
-                                        <p>780 sqft</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bed"></i>
-                                        <p>4</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bath"></i>
-                                        <p>3</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-car"></i>
-                                        <p>2</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="feature-item">
-                            <div class="fi-pic set-bg" data-setbg="{% static 'img/feature/feature-4.jpg' %}">
-                                <div class="pic-tag">
-                                    <div class="f-text">feauture</div>
-                                    <div class="s-text">For Sale</div>
-                                </div>
-                                <div class="feature-author">
-                                    <div class="fa-pic">
-                                        <img src="{% static 'img/feature/f-author-3.jpg' %}" alt="">
-                                    </div>
-                                    <div class="fa-text">
-                                        <span>Jonathan Walters</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fi-text">
-                                <div class="inside-text">
-                                    <h4>French Riviera Villa</h4>
-                                    <ul>
-                                        <li><i class="fa fa-map-marker"></i> 180 York Road, London, UK</li>
-                                        <li><i class="fa fa-tag"></i> Villa</li>
-                                    </ul>
-                                    <h5 class="price">$5900<span>/month</span></h5>
-                                </div>
-                                <ul class="room-features">
-                                    <li>
-                                        <i class="fa fa-arrows"></i>
-                                        <p>780 sqft</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bed"></i>
-                                        <p>4</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bath"></i>
-                                        <p>3</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-car"></i>
-                                        <p>2</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="feature-item">
-                            <div class="fi-pic set-bg" data-setbg="{% static 'img/feature/feature-5.jpg' %}">
-                                <div class="pic-tag">
-                                    <div class="f-text">feauture</div>
-                                    <div class="s-text">For Sale</div>
-                                </div>
-                                <div class="feature-author">
-                                    <div class="fa-pic">
-                                        <img src="{% static 'img/feature/f-author-3.jpg' %}" alt="">
-                                    </div>
-                                    <div class="fa-text">
-                                        <span>Jonathan Walters</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fi-text">
-                                <div class="inside-text">
-                                    <h4>French Riviera Villa</h4>
-                                    <ul>
-                                        <li><i class="fa fa-map-marker"></i> 180 York Road, London, UK</li>
-                                        <li><i class="fa fa-tag"></i> Villa</li>
-                                    </ul>
-                                    <h5 class="price">$5900<span>/month</span></h5>
-                                </div>
-                                <ul class="room-features">
-                                    <li>
-                                        <i class="fa fa-arrows"></i>
-                                        <p>780 sqft</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bed"></i>
-                                        <p>4</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bath"></i>
-                                        <p>3</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-car"></i>
-                                        <p>2</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                {% endif %}
                 </div>
             </div>
         </div>
@@ -475,105 +303,83 @@
     </div>
     <!-- Video Section End -->
 
-    <!-- Top Properties Section Begin -->
+    <!-- Latest Properties Section Begin -->
+
     <div class="top-properties-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="properties-title">
                         <div class="section-title">
-                            <span>Top Property For You</span>
-                            <h2>Top Properties</h2>
+                            <span>Latest Property For You</span>
+                            <h2>Latest Properties</h2>
                         </div>
-                        <a href="#" class="top-property-all">View All Property</a>
+                        <a href="{% url 'listings' %}" class="top-property-all">View All Property</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="top-properties-carousel owl-carousel">
+            {% if listings %}
+                {% for listing in listings %}
                 <div class="single-top-properties">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="stp-pic">
-                                <img src="{% static 'img/properties/properties-1.jpg' %}" alt="">
+                                <a href="{% url 'listing' listing.id %}"><img src="{{ listing.photo_main.url }}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="stp-text">
                                 <div class="s-text">For Sale</div>
-                                <h2>Villa 9721 Glen Creek</h2>
+                                <h2>{{ listing.title }}</h2>
                                 <div class="room-price">
                                     <span>Start From:</span>
-                                    <h4>$3.000.000</h4>
+                                    <h4>₦{{ listing.price | intcomma }}</h4>
                                 </div>
-                                <div class="properties-location"><i class="icon_pin"></i> 9721 Glen Creek Ave. Ballston Spa, NY</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <div class="properties-location"><i class="icon_pin"></i> {{ listing.zipcode }} {{ listing.address }}.
+                                        {{ listing.city}}, {{ listing.state }}</div>
+                                <p>{{ listing.description|truncatewords:50|linebreaks }}</p>
                                 <ul class="room-features">
-                                    <li>
-                                        <i class="fa fa-arrows"></i>
-                                        <p>5201 sqft</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bed"></i>
-                                        <p>8 Bed Room</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bath"></i>
-                                        <p>7 Baths Bed</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-car"></i>
-                                        <p>1 Garage</p>
-                                    </li>
-                                </ul>
+                                        <li>
+                                            <i class="fa fa-arrows"></i>
+                                            <p>{{ listing.sqft }} sqft</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bed"></i>
+                                            <p>{{ listing.bedrooms }} Bed Room</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bath"></i>
+                                            <p>{{ listing.bathrooms }} Baths/toilet</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-car"></i>
+                                            <p>{{ listing.garage }} Garage</p>
+                                        </li>
+                                    </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="single-top-properties">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="stp-pic">
-                                <img src="{% static 'img/properties/properties-2.jpg' %}" alt="">
-                            </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-lg-12">
+                    <div class="properties-title">
+                        <div class="section-title">
+                            <span>No Latest Property For You</span>
+                            <h2>No Latest Properties</h2>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="stp-text">
-                                <div class="s-text">For Sale</div>
-                                <h2>Villa 9721 Glen Creek</h2>
-                                <div class="room-price">
-                                    <span>Start From:</span>
-                                    <h4>$3.000.000</h4>
-                                </div>
-                                <div class="properties-location"><i class="icon_pin"></i> 9721 Glen Creek Ave. Ballston Spa, NY</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <ul class="room-features">
-                                    <li>
-                                        <i class="fa fa-arrows"></i>
-                                        <p>5201 sqft</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bed"></i>
-                                        <p>8 Bed Room</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bath"></i>
-                                        <p>7 Baths Bed</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-car"></i>
-                                        <p>1 Garage</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <a href="{% url 'listings' %}" class="top-property-all">View All Property</a>
                     </div>
                 </div>
+            {% endif %}
             </div>
         </div>
     </div>
-    <!-- Top Properties Section End -->
+
+    <!-- Latest Properties Section End -->
 
     <!-- Agent Section Begin -->
     <section class="agent-section spad">
@@ -588,71 +394,21 @@
             </div>
             <div class="row">
                 <div class="agent-carousel owl-carousel">
+                {% for realtor in realtors %}
                     <div class="col-lg-3">
                         <div class="single-agent">
                             <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-1.jpg' %}" alt="">
+                                <img src="{{ realtor.photo.url }}" alt="">
                                 <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="www.twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="www.instagram.com" class="instagram"><i class="fa fa-instagram"></i></a>
+                                    <a href="www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
                                 </div>
                             </div>
-                            <h5>Matthew Robbins <span>Founder & Ceo</span></h5>
+                            <h5>{{ realtor.name }} <span>Founder & Ceo</span></h5>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="single-agent">
-                            <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-2.jpg' %}" alt="">
-                                <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                </div>
-                            </div>
-                            <h5>Tillie Burns <span>Marketing Manager</span></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="single-agent">
-                            <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-3.jpg' %}" alt="">
-                                <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                </div>
-                            </div>
-                            <h5>Derrick Lawson <span>Company Agents</span></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="single-agent">
-                            <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-4.jpg' %}" alt="">
-                                <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                </div>
-                            </div>
-                            <h5>Clifford Colon <span>Saler Manager</span></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="single-agent">
-                            <div class="sa-pic">
-                                <img src="{% static 'img/agent/agent-5.jpg' %}" alt="">
-                                <div class="hover-social">
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                </div>
-                            </div>
-                            <h5>Clifford Colon <span>Saler Manager</span></h5>
-                        </div>
-                    </div>
+                {% endfor %}
                 </div>
             </div>
         </div>
