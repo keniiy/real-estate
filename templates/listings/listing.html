@@ -1,5 +1,275 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
+    <!-- Property Details Hero Section Begin -->
+    <section class="pd-hero-section set-bg" data-setbg="{{ listing.photo_main.url }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="pd-hero-text">
+                        <p class="room-location"><i class="icon_pin"></i> {{ listing.zipcode }} {{ listing.city }} {{ listing.state }}</p>
+                        <h2>{{ listing.title }}</h2>
+                        <div class="room-price">
+                            <span>Start Form:</span>
+                            <p>₦{{ listing.price | intcomma }}</p>
+                        </div>
+                        <ul class="room-features">
+                            <li>
+                                <i class="fa fa-arrows"></i>
+                                <p>{{ listing.sqft }} sqft</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-bed"></i>
+                                <p>{{ listing.bedrooms }} Bed Room</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-bath"></i>
+                                <p>{{ listing.bathrooms }} Baths Bed</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-car"></i>
+                                <p>{{ listing.garage }} Garage</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Property Details Hero Section Begin -->
 
+    <!-- Property Details Section Begin -->
+    <section class="property-details-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="pd-details-text">
+                        <div class="pd-details-social">
+                            <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                            <a href="www.telegram.com"><i class="fa fa-send"></i></a>
+                            <a href="www.star.com"><i class="fa fa-star"></i></a>
+                            <a href="www.google.com"><i class="fa fa-print"></i></a>
+                            <a href="www.cloud.com"><i class="fa fa-cloud-download"></i></a>
+                        </div>
+                        <div class="property-more-pic">
+                            <div class="product-pic-zoom">
+                                <img class="product-big-img" src="{{ listing.photo_main.url }}" height="400px" alt="">
+                            </div>
+                            <div class="product-thumbs">
+                                <div class="product-thumbs-track ps-slider owl-carousel">
+                                    {% if listing.photo_1 %}
+                                    <div class="pt" data-imgbigurl="{{ listing.photo_1.url }}" style="height: 100px"><img
+                                            src="{{ listing.photo_1.url }}" style="height: 100px" alt=""></div>
+                                    {% endif %}
+                                    {% if listing.photo_2 %}
+                                    <div class="pt active" data-imgbigurl="{{ listing.photo_2.url }}" style="height: 100px"><img
+                                            src="{{ listing.photo_2.url }}" style="height: 100px" alt=""></div>
+                                    {% endif %}
+                                    {% if listing.photo_3 %}
+                                    <div class="pt" data-imgbigurl="{{ listing.photo_3.url }}" style="height: 100px"><img
+                                            src="{{ listing.photo_3.url }}" style="height: 100px" alt=""></div>
+                                    {% endif %}
+                                    {% if listing.photo_4 %}
+                                    <div class="pt" data-imgbigurl="{{ listing.photo_4.url }}" style="height: 100px"><img
+                                            src="{{ listing.photo_4.url }}" style="height: 100px" alt=""></div>
+                                    {% endif %}
+                                    {% if listing.photo_5 %}
+                                    <div class="pt" data-imgbigurl="{{ listing.photo_5.url }}" style="height: 100px"><img
+                                            src="{{ listing.photo_5.url }}" style="height: 100px" alt=""></div>
+                                    {% endif %}
+                                    {% if listing.photo_6 %}
+                                    <div class="pt" data-imgbigurl="{{ listing.photo_6.url }}" style="height: 100px"><img
+                                            src="{{ listing.photo_6.url }}" style="height: 100px" alt=""></div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pd-desc">
+                            <h4>Description</h4>
+                            <p>{{ listing.description }}</p>
+                        </div>
+                        <div class="pd-details-tab">
+                            <div class="tab-item">
+                                <ul class="nav" role="tablist">
+                                    <li>
+                                        <a class="active" data-toggle="tab" href="#tab-1" role="tab">Overview</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tab-2" role="tab">Description</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-item-content">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade-in active" id="tab-1" role="tabpanel">
+                                        <div class="property-more-table">
+                                            <table class="left-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="pt-name">Price</td>
+                                                        <td class="p-value">₦{{ listing.price | intcomma }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Property Name</td>
+                                                        <td class="p-value">{{ listing.title }}</td>
+                                                    <tr>
+                                                        <td class="pt-name">Bathrooms</td>
+                                                        <td class="p-value">{{ listing.bathrooms }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Rooms</td>
+                                                        <td class="p-value">{{ listing.bedrooms }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Parking lots</td>
+                                                        <td class="p-value">{{ listing.garage }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Lot area</td>
+                                                        <td class="p-value">{{ listing.sqft }} spft</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table class="right-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="pt-name">Agent</td>
+                                                        <td class="p-value">{{ listing.realtor }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Contract type</td>
+                                                        <td class="p-value">Sale</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Beds</td>
+                                                        <td class="p-value">{{ listing.bedrooms }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Garages</td>
+                                                        <td class="p-value">{{ listing.garage }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pt-name">Home area</td>
+                                                        <td class="p-value">{{ listing.sqft }} sqft</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-2" role="tabpanel">
+                                        <div class="pd-table-desc">
+                                            <p>{{ listing.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="property-map">
+                            <h4>Map</h4>
+                            <div class="map-inside">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2942.5524090066037!2d-71.10245469994108!3d42.47980730490846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3748250c43a43%3A0xe1b9879a5e9b6657!2sWinter%20Street%20Public%20Parking%20Lot!5e0!3m2!1sen!2sbd!4v1577299251173!5m2!1sen!2sbd"
+                                    height="320" style="border:0;" allowfullscreen=""></iframe>
+                                <div class="icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="property-contactus">
+                            <h4>Make An Inquiry Contact Realtor</h4>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="agent-desc">
+                                        <img src="{{ listing.realtor.photo.url }}" height="300px" overflow="hidden" alt="">
+                                        <div class="agent-title">
+                                            <h5>{{ listing.realtor }}</h5>
+                                            <span>Realtor of this property</span>
+                                        </div>
+                                        <div class="agent-social">
+                                            <a href="www.facebook"><i class="fa fa-facebook"></i></a>
+                                            <a href="www.twitter.com"><i class="fa fa-twitter"></i></a>
+                                            <a href="www.google.com"><i class="fa fa-google-plus"></i></a>
+                                            <a href="www.gmail.com"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                        <p>
+                                            {{ listing.realtor.description }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 offset-lg-1">
+                                    <form action="#" class="agent-contact-form">
+                                        <input type="text" placeholder="Name*">
+                                        <input type="text" placeholder="Email">
+                                        <textarea placeholder="Messages"></textarea>
+                                        <button type="submit" class="site-btn">Send Message</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="property-sidebar">
+                        <div class="best-agents">
+                        <h4>Realtor of the month</h4>
+                        {% if mvp_realtor %}
+                        {% for mvp in mvp_realtor %}
+                        <a class="ba-item">
+                            <div class="ba-pic">
+                                <img src="{{ mvp.photo.url }}" height="100px" width="70px">
+                            </div>
+                            <div class="ba-text">
+                                <h5>{{ mvp.name }}</h5>
+                                <span>Company Realtor</span>
+                                <p class="property-items">{{ mvp.email }}</p>
+                            </div>
+                        </a>
+                        {% endfor %}
+                        {% else %}
+                        <div class="col-md-12">
+                            <h3>No Realtor of the month</h3>
+                        </div>
+                        {% endif %}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Property Details Section End -->
+
+    <!-- Partner Carousel Section Begin -->
+    <div class="partner-section">
+        <div class="container">
+            <div class="partner-carousel owl-carousel">
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'img/partner/partner-1.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'img/partner/partner-2.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'img/partner/partner-3.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'img/partner/partner-4.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="partner-logo">
+                    <div class="partner-logo-tablecell">
+                        <img src="{% static 'img/partner/partner-5.png' %}" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Partner Carousel Section End -->
 {% endblock %}

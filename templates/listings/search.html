@@ -1,5 +1,122 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <h2>Listings</h2>
+                    <div class="breadcrumb-option">
+                        <a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a>
+                        <span>Listings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section Begin -->
+<!-- Search Form Section Begin -->
+<form action="{% url 'search' %}" class="filter-form">
+                        <div class="second-row">
+                            <select name="state">
+                                <option selected="true" disabled="disabled">All State</option>
+                                {% for key,value in state_choices.items %}
+                                    <option value="{{ key }}">{{ value }}</option>
+                                {% endfor %}
+                            </select>
+                            <select name="bedrooms">
+                                <option selected="true" disabled="disabled">Bedrooms (All)</option>
+                                {% for key,value in bedroom_choices.items %}
+                                    <option value="{{ key }}">{{ value }}</option>
+                                {% endfor %}
+                            </select>
+                            <select name="price">
+                                <option selected="true" disabled="disabled">Price (All)</option>
+                                 {% for key,value in prices_choices.items %}
+                                    <option value="{{ key }}">{{ value }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="search-btn">Search</button>
+                        </div>
+                    </form>
+<!-- Search Form Section End -->
+<div class="col-lg-12">
 
+    <div class="property-list">
+        {% if listings %}
+        {% for listing in listings %}
+        <div class="single-property-item">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="property-pic">
+                        <a href="{% url 'listing' listing.id %}"><img src="{{ listing.photo_main.url }}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="property-text">
+                        <div class="s-text">For Sale</div>
+                        <h5 class="r-title">{{ listing.title }}</h5>
+                        <div class="room-price">
+                            <span>Start From:</span>
+                            <h5>₦{{ listing.price | intcomma }}</h5>
+                        </div>
+                        <div class="properties-location"><i class="icon_pin"></i> {{ listing.zipcode }} {{ listing.address }}.
+                            {{ listing.city}}, {{ listing.state }}
+                        </div>
+                        <p>{{ listing.description|truncatewords:50|linebreaks }}</p>
+                        <ul class="room-features">
+                            <li>
+                                <i class="fa fa-arrows"></i>
+                                <p>{{ listing.sqft }} sqft</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-bed"></i>
+                                <p>{{ listing.bedrooms }} Bed Room</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-bath"></i>
+                                <p>{{ listing.bathrooms }} Baths/toilet</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-car"></i>
+                                <p>{{ listing.garage }} Garage</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="col-md-12">
+            <h1 style="Text-align:center">No Listings Avaliable</h1>
+        </div>
+        {% endif %}
+    </div>
+    <div class="property-pagination">
+        {% if listings.has_other_pages %}
+        {% if listings.has_previous %}
+        <a href="?page={{listings.previous_page_number}}">&laquo;</a>
+        {% else %}
+        <a style="pointer-events: none;">&laquo;</a>
+        {% endif %}
+        {% for i in listings.paginator.page_range %}
+        {% if listings.number == i %}
+        <a>{{ i }}</a>
+        {% else %}
+        <a href="?page={{i}}">{{ i }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if listings.has_next %}
+        <a href="?page={{listings.next_page_number}}">&raquo;</a>
+        {% else %}
+        <a style="pointer-events: none;">&raquo;</a>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
 {% endblock %}

@@ -7,19 +7,19 @@
                         <nav class="main-menu">
                             <ul>
                                 <li
-                                    {% if '/' == request.path %} class="active" { % else %} {% endif %}>
+                                    {% if '/' == request.path %} class="active" {% else %} {% endif %}>
                                     <a href="{% url 'index' %}">Home</a>
                                 </li>
                                 <li
-                                    {% if 'about' in request.path %} class="active" { % else %} {% endif %}>
+                                    {% if 'about' in request.path %} class="active" {% else %} {% endif %}>
                                     <a href="{% url 'about' %}">About</a>
                                 </li>
                                 <li
-                                    {% if 'listing' in request.path %} class="active" { % else %} {% endif %}>
+                                    {% if 'listing' in request.path %} class="active" {% else %} {% endif %}>
                                     <a href="{% url 'listings' %}">Listings</a>
                                 </li>
                                 <li
-                                    {% if 'blog' in request.path %} class="active" { % else %} {% endif %}>
+                                    {% if 'blog' in request.path %} class="active" {% else %} {% endif %}>
                                     <a href="./blog.html">Blog</a>
                                 </li>
                             </ul>
@@ -37,7 +37,8 @@
                                     </ul>
                                 </div>
                             </div>
-                            <a href="#" class="property-sub">Submit Property</a>
+                            <a href="#" class="property-sub">Sign In</a>
+                            <a href="#" class="property-sub">Register</a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +49,8 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="./index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                            <img src="{% static 'img/icon_4.png' %}" alt="Encipherer Real Esatate">
+                            <b>Encipherer Real Esatate</b>
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -58,21 +60,21 @@
                                     <i class="icon_phone"></i>
                                     <div class="info-text">
                                         <span>Phone:</span>
-                                        <p>(+12) 345 6789</p>
+                                        <p>(+234) 9022123561</p>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="icon_map"></i>
                                     <div class="info-text">
                                         <span>Address:</span>
-                                        <p>16 Creek Ave, <span>NY</span></p>
+                                        <p>17, Samueul Street,</p>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="icon_mail"></i>
                                     <div class="info-text">
                                         <span>Email:</span>
-                                        <p>Info.cololib@gmail.com</p>
+                                        <p>kehindekehinde894@gmail.com</p>
                                     </div>
                                 </li>
                             </ul>

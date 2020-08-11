@@ -3,35 +3,38 @@
 {% load humanize %}
 {% block content %}
 <!-- Hero Section Begin -->
+
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-item set-bg" data-setbg="{% static 'img/hero/hero-1.jpg' %}">
+            {% for carousel in carousels %}
+            <div class="single-hero-item set-bg" data-setbg="{{ carousel.photo_main.url }}">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2">
                             <div class="hero-text">
-                                <p class="room-location"><i class="icon_pin"></i> 9721 Glen Creek Ave. Ballston Spa, NY</p>
-                                <h2>Villa 9721 Glen Creek</h2>
+                                <p class="room-location"><i class="icon_pin"></i> {{ carousel.zipcode }} {{ carousel.state }} ,
+                                    {{ carousel.city }}</p>
+                                <a href="{% url 'listing' carousel.id %}"><h2>{{ carousel.title }}</h2></a>
                                 <div class="room-price">
                                     <span>Start Form:</span>
-                                    <p>$3.000.000</p>
+                                    <p>₦{{ carousel.price | intcomma }}</p>
                                 </div>
                                 <ul class="room-features">
                                     <li>
                                         <i class="fa fa-arrows"></i>
-                                        <p>5201 sqft</p>
+                                        <p>{{ carousel.sqft }} sqft</p>
                                     </li>
                                     <li>
                                         <i class="fa fa-bed"></i>
-                                        <p>8 Bed Room</p>
+                                        <p>{{ carousel.bedroom }} Bed Room</p>
                                     </li>
                                     <li>
                                         <i class="fa fa-bath"></i>
-                                        <p>7 Baths Bed</p>
+                                        <p>{{ carousel.bathrooms }} Baths Rooms</p>
                                     </li>
                                     <li>
                                         <i class="fa fa-car"></i>
-                                        <p>1 Garage</p>
+                                        <p>{{ carousel.garage }} Garage</p>
                                     </li>
                                 </ul>
                             </div>
@@ -39,86 +42,15 @@
                     </div>
                 </div>
             </div>
-            <div class="single-hero-item set-bg" data-setbg="{% static 'img/hero/hero-2.jpg' %}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
-                            <div class="hero-text">
-                                <p class="room-location"><i class="icon_pin"></i> 9721 Glen Creek Ave. Ballston Spa, NY</p>
-                                <h2>Villa 9721 Glen Creek</h2>
-                                <div class="room-price">
-                                    <span>Start Form:</span>
-                                    <p>$3.000.000</p>
-                                </div>
-                                <ul class="room-features">
-                                    <li>
-                                        <i class="fa fa-arrows"></i>
-                                        <p>5201 sqft</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bed"></i>
-                                        <p>8 Bed Room</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bath"></i>
-                                        <p>7 Baths Bed</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-car"></i>
-                                        <p>1 Garage</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-hero-item set-bg" data-setbg="{% static 'img/hero/hero-3.jpg' %}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
-                            <div class="hero-text">
-                                <p class="room-location"><i class="icon_pin"></i> 9721 Glen Creek Ave. Ballston Spa, NY</p>
-                                <h2>Villa 9721 Glen Creek</h2>
-                                <div class="room-price">
-                                    <span>Start Form:</span>
-                                    <p>$3.000.000</p>
-                                </div>
-                                <ul class="room-features">
-                                    <li>
-                                        <i class="fa fa-arrows"></i>
-                                        <p>5201 sqft</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bed"></i>
-                                        <p>8 Bed Room</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-bath"></i>
-                                        <p>7 Baths Bed</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-car"></i>
-                                        <p>1 Garage</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="thumbnail-pic">
             <div class="thumbs owl-carousel">
+                {% for carousel in carousels %}
                 <div class="item">
-                    <img src="{% static 'img/hero/dot-1.jpg' %}" alt="">
+                    <img src="{{ carousel.photo_main.url }}" alt="">
                 </div>
-                <div class="item">
-                    <img src="{% static 'img/hero/dot-2.jpg' %}" alt="">
-                </div>
-                <div class="item">
-                    <img src="{% static 'img/hero/dot-3.jpg' %}" alt="">
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -136,35 +68,30 @@
                         </div>
                         <div class="home-text">
                             <i class="fa fa-home"></i>
-                            House For Sell
+                            Home For Sell
                         </div>
                     </div>
-                    <form action="#" class="filter-form">
-                        <div class="first-row">
-                            <select>
-                                <option value="">Villa & Pool</option>
-                            </select>
-                            <select>
-                                <option value="">Title</option>
-                            </select>
-                            <select>
-                                <option value="">Ani City</option>
-                            </select>
-                            <select>
-                                <option value="">Any Bithrooms</option>
-                            </select>
-                        </div>
+                    <form action="{% url 'search' %}" class="filter-form">
                         <div class="second-row">
-                            <select>
-                                <option value="">Any Bedrooms</option>
+                            <select name="state">
+                                <option selected="true" disabled="disabled">State (All)</option>
+                                {% for key,value in state_choices.items %}
+                                    <option value="{{ key }}" {% if key == values.state %} selected {% endif %}>{{ value }}</option>
+                                {% endfor %}
                             </select>
-                           <select>
-                                <option value="">Any price</option>
+                            <select name="bedrooms">
+                                <option selected="true" disabled="disabled">Bedrooms (All)</option>
+                                {% for key,value in bedroom_choices.items %}
+                                    <option value="{{ key }}" {% if key == values.bedrooms %} selected {% endif %}>{{ value }}</option>
+                                {% endfor %}
                             </select>
-                            <select>
-                                <option value="">Any size</option>
+                            <select name="price">
+                                <option selected="true" disabled="disabled">Price (All)</option>
+                                 {% for key,value in prices_choices.items %}
+                                    <option value="{{ key }}" {% if key == values.price %} selected {% endif %}>{{ value }}</option>
+                                {% endfor %}
                             </select>
-                            <button type="button" class="search-btn">Search</button>
+                            <button type="submit" class="search-btn">Search</button>
                         </div>
                     </form>
                 </div>
@@ -340,7 +267,7 @@
                                 </div>
                                 <div class="properties-location"><i class="icon_pin"></i> {{ listing.zipcode }} {{ listing.address }}.
                                         {{ listing.city}}, {{ listing.state }}</div>
-                                <p>{{ listing.description|truncatewords:50|linebreaks }}</p>
+                                <p>{{ listing.description|truncatewords:30|linebreaks }}</p>
                                 <ul class="room-features">
                                         <li>
                                             <i class="fa fa-arrows"></i>
