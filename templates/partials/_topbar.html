@@ -6,6 +6,11 @@
                     <div class="col-lg-7">
                         <nav class="main-menu">
                             <ul>
+                                {% if user.is_authenticated %}
+                                <li>
+                                    <h5 style="color:White">Hi {{ user.username }}</h5>
+                                </li>
+                                {% endif %}
                                 <li
                                     {% if '/' == request.path %} class="active" {% else %} {% endif %}>
                                     <a href="{% url 'index' %}">Home</a>
@@ -18,6 +23,12 @@
                                     {% if 'listing' in request.path %} class="active" {% else %} {% endif %}>
                                     <a href="{% url 'listings' %}">Listings</a>
                                 </li>
+                                {% if user.is_authenticated %}
+                                <li
+                                    {% if 'dashboard' in request.path %} class="active" {% else %} {% endif %}>
+                                    <a href="{% url 'dashboard' %}">Dashboard</a>
+                                </li>
+                                {% endif %}
                                 <li
                                     {% if 'blog' in request.path %} class="active" {% else %} {% endif %}>
                                     <a href="./blog.html">Blog</a>
@@ -37,8 +48,16 @@
                                     </ul>
                                 </div>
                             </div>
-                            <a href="#" class="property-sub">Sign In</a>
-                            <a href="#" class="property-sub">Register</a>
+                            {% if user.is_authenticated %}
+                                <a href="javascript:{document.getElementById('logout').submit()}" class="property-sub">Logout</a>
+                                <form action="{% url 'logout' %}" method="POST" id="logout">
+                                {% csrf_token %}
+                                <input type="hidden">
+                                </form>
+                            {% else %}
+                                <a href="{% url 'login' %}" class="property-sub">Login</a>
+                                <a href="{% url 'register' %}" class="property-sub">Register</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -50,7 +69,7 @@
                     <div class="col-lg-3">
                         <div class="logo">
                             <img src="{% static 'img/icon_4.png' %}" alt="Encipherer Real Esatate">
-                            <b>Encipherer Real Esatate</b>
+                            <b>Encipherer Real Estate</b>
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -60,14 +79,7 @@
                                     <i class="icon_phone"></i>
                                     <div class="info-text">
                                         <span>Phone:</span>
-                                        <p>(+234) 9022123561</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="icon_map"></i>
-                                    <div class="info-text">
-                                        <span>Address:</span>
-                                        <p>17, Samueul Street,</p>
+                                        <p>(+234)9022123561</p>
                                     </div>
                                 </li>
                                 <li>
