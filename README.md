@@ -5,7 +5,7 @@ python-3.8.2</b>
 
 Real Estate website features
 FRONTEND PAGES
-
+<p>
 •	Home
 •	About
 •	Listings
@@ -14,7 +14,7 @@ FRONTEND PAGES
 •	Register
 •	Login
 •	Dashboard (Inquiries)
-
+</p>
 DESIGN SPECS
 •	Mobile Friendly
 •	Social media icons & contact info
