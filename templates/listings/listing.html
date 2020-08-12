@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %} | {{ listing.title }} {% endblock %}
 {% load humanize %}
 {% block content %}
     <!-- Property Details Hero Section Begin -->
@@ -110,9 +111,6 @@
                                                         <td class="pt-name">Price</td>
                                                         <td class="p-value">₦{{ listing.price | intcomma }}</td>
                                                     </tr>
-                                                    <tr>
-                                                        <td class="pt-name">Property Name</td>
-                                                        <td class="p-value">{{ listing.title }}</td>
                                                     <tr>
                                                         <td class="pt-name">Bathrooms</td>
                                                         <td class="p-value">{{ listing.bathrooms }}</td>
