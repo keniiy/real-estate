@@ -7,6 +7,8 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'listing', 'email', 'contact_date')
     list_display_links = ('id', 'name')
     search_fields = ('name', 'email', 'listing')
+    readonly_fields = ('name', 'listing', 'listing_id', 'message', 'email', 'contact_date', 'user_id', 'phone')
+
     list_per_page = 25
 
 

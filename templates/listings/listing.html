@@ -3,6 +3,7 @@
 {% block title %} | {{ listing.title }} {% endblock %}
 {% load humanize %}
 {% block content %}
+    {% include 'partials/_alerts.html' %}
     <!-- Property Details Hero Section Begin -->
     <section class="pd-hero-section set-bg" data-setbg="{{ listing.photo_main.url }}">
         <div class="container">
@@ -196,10 +197,20 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 offset-lg-1">
-                                    <form action="#" class="agent-contact-form">
-                                        <input type="text" placeholder="Name*">
-                                        <input type="text" placeholder="Email">
-                                        <textarea placeholder="Messages"></textarea>
+                                    <form action="{% url 'contact' %}" method="post" class="agent-contact-form">
+                                        {% csrf_token %}
+                                        {% if user.is_authenticated %}
+                                            <input type="hidden" name="user_id" value="{{ user.id }}">
+                                        {% else %}
+                                            <input type="hidden" name="user_id" value="0">
+                                        {% endif %}
+                                        <input type="hidden" name="realtor_email" value="{{ listing.realtor.email }}">
+                                        <input type="hidden" name="listing_id" value="{{ listing.id }}">
+                                        <input type="text" name="listing" value="{{ listing.title }}">
+                                        <input type="text" name="name" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% else %} placeholder="Name*" {% endif %} required>
+                                        <input type="email" name="email" {% if user.is_authenticated %} value="{{ user.email }}" {% else %} placeholder="Email*" {% endif %}>
+                                        <input type="number" name="phone" placeholder="Phone*">
+                                        <textarea placeholder="Messages" name="message"></textarea>
                                         <button type="submit" class="site-btn">Send Message</button>
                                     </form>
                                 </div>
