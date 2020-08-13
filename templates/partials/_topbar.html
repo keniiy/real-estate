@@ -1,68 +1,54 @@
 {% load static %}
+
  <header class="header-section">
-        <div class="top-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <nav class="main-menu">
-                            <ul>
-                                {% if user.is_authenticated %}
-                                <li>
-                                    <h5 style="color:White">Hi {{ user.username }}</h5>
-                                </li>
-                                {% endif %}
-                                <li
-                                    {% if '/' == request.path %} class="active" {% else %} {% endif %}>
-                                    <a href="{% url 'index' %}">Home</a>
-                                </li>
-                                <li
-                                    {% if 'about' in request.path %} class="active" {% else %} {% endif %}>
-                                    <a href="{% url 'about' %}">About</a>
-                                </li>
-                                <li
-                                    {% if 'listing' in request.path %} class="active" {% else %} {% endif %}>
-                                    <a href="{% url 'listings' %}">Listings</a>
-                                </li>
-                                {% if user.is_authenticated %}
-                                <li
-                                    {% if 'dashboard' in request.path %} class="active" {% else %} {% endif %}>
-                                    <a href="{% url 'dashboard' %}">Dashboard</a>
-                                </li>
-                                {% endif %}
-                                <li
-                                    {% if 'blog' in request.path %} class="active" {% else %} {% endif %}>
-                                    <a href="./blog.html">Blog</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="top-right">
-                            <div class="language-option">
-                                <img src="{% static 'img/flag.png' %}" alt="">
-                                <span>English</span>
-                                <i class="fa fa-angle-down"></i>
-                                <div class="flag-dropdown">
-                                    <ul>
-                                        <li><a href="#">English</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {% if user.is_authenticated %}
-                                <a href="javascript:{document.getElementById('logout').submit()}" class="property-sub">Logout</a>
-                                <form action="{% url 'logout' %}" method="POST" id="logout">
-                                {% csrf_token %}
-                                <input type="hidden">
-                                </form>
-                            {% else %}
-                                <a href="{% url 'login' %}" class="property-sub">Login</a>
-                                <a href="{% url 'register' %}" class="property-sub">Register</a>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+         {% if user.is_authenticated %}
+               <a class="navbar-brand" href="#">HI {{ user.username }}</a>
+         {% endif %}
+
+         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                 <li class="nav-item {% if '/' == request.path %} active {% else %} {% endif %}">
+                     <a class="nav-link active" href="{% url 'index' %}">Home </a>
+                 </li>
+                 <li class="nav-item {% if 'about' == request.path %} active {% else %} {% endif %}">
+                     <a class="nav-link" href="{% url 'about' %}">About </a>
+                 </li>
+                 <li class="nav-item {% if 'listing' == request.path %} active {% else %} {% endif %}">
+                     <a class="nav-link" href="{% url 'listings' %}">Listings</a>
+                 </li>
+                 {% if user.is_authenticated %}
+                 <li class="nav-item {% if 'dashboard' == request.path %} active {% else %} {% endif %}">
+                     <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                 </li>
+                 {% endif %}
+                 <li class="nav-item {% if 'blog' == request.path %} active {% else %} {% endif %}">
+                     <a class="nav-link disabled" href="{% url 'listings' %}">Blog</a>
+                 </li>
+             </ul>
+             {% if user.is_authenticated %}
+             <form class="form-inline my-2 my-lg-0" action="{% url 'logout' %}" method="POST" id="logout">
+                 {% csrf_token %}
+                 <input type="hidden">
+                 <a href="javascript:{document.getElementById('logout').submit()}">
+                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+                 </a>
+             </form>
+             {% else %}
+                    <a href="{% url 'login' %}">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+                    </a>
+                    <a href="{% url 'login' %}">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Register</button>
+                    </a>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+             {% endif %}
+         </div>
+     </nav>
         <div class="nav-logo">
             <div class="container">
                 <div class="row">
@@ -79,7 +65,7 @@
                                     <i class="icon_phone"></i>
                                     <div class="info-text">
                                         <span>Phone:</span>
-                                        <p>(+234)9022123561</p>
+                                        <p>(+234) 9022123561</p>
                                     </div>
                                 </li>
                                 <li>
