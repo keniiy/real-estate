@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60313df1-1c40-4456-9ece-da73b7675638" name="Default Changelist" comment="deployment">
+    <list default="true" id="60313df1-1c40-4456-9ece-da73b7675638" name="Default Changelist" comment="whitenoise deployment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/encipherer_real_estate/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/encipherer_real_estate/settings.py" afterDir="false" />
     </list>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597323684229</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="whitenoise deployment">
+      <created>1597324675883</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1597324675883</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,7 +164,8 @@
     <MESSAGE value="Contact App about making inquiry" />
     <MESSAGE value="Contact App about making inquiry finished" />
     <MESSAGE value="deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="deployment" />
+    <MESSAGE value="whitenoise deployment" />
+    <option name="LAST_COMMIT_MESSAGE" value="whitenoise deployment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="452" y="184" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597322672798">
@@ -176,10 +184,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1596803580471" />
-    <state x="275" y="115" key="Vcs.Push.Dialog.v2" timestamp="1597323754667">
+    <state x="275" y="115" key="Vcs.Push.Dialog.v2" timestamp="1597324892004">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="115" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1597323754667" />
+    <state x="275" y="115" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1597324892004" />
     <state x="339" y="25" width="670" height="676" key="search.everywhere.popup" timestamp="1596879541687">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
