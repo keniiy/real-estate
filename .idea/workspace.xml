@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="60313df1-1c40-4456-9ece-da73b7675638" name="Default Changelist" comment="Contact App about making inquiry finished">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encipherer_real_estate/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/encipherer_real_estate/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1flW1rMFL7bKZG3dm8feb4zR8R7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hp pc\PycharmProjects\encipherer_real_estate\encipherer_real_estate\static\signup" />
+      <recent name="C:\Users\hp pc\PycharmProjects\encipherer_real_estate\encipherer_real_estate\static\img" />
+      <recent name="C:\Users\hp pc\PycharmProjects\encipherer_real_estate\encipherer_real_estate\static" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="60313df1-1c40-4456-9ece-da73b7675638" name="Default Changelist" comment="" />
+      <created>1596792947226</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596792947226</updated>
+    </task>
+    <task id="LOCAL-00001" summary="start real estate project">
+      <created>1596801347614</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596801347614</updated>
+    </task>
+    <task id="LOCAL-00002" summary="pages app done">
+      <created>1596882086159</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596882086159</updated>
+    </task>
+    <task id="LOCAL-00003" summary="listing and realtor app">
+      <created>1596908005773</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596908005773</updated>
+    </task>
+    <task id="LOCAL-00004" summary="admin customiazation">
+      <created>1596916124310</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1596916124310</updated>
+    </task>
+    <task id="LOCAL-00005" summary="home listing and about dyanamic content and mvp_realtor of the month">
+      <created>1596965345555</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596965345555</updated>
+    </task>
+    <task id="LOCAL-00006" summary="accounts apps">
+      <created>1597118911438</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1597118911438</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Contact App about making inquiry">
+      <created>1597202517201</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1597202517201</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Contact App about making inquiry finished">
+      <created>1597211370604</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1597211370604</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="start real estate project" />
+    <MESSAGE value="pages app done" />
+    <MESSAGE value="listing and realtor app" />
+    <MESSAGE value="admin customiazation" />
+    <MESSAGE value="home listing and about dyanamic content and mvp_realtor of the month" />
+    <MESSAGE value="accounts apps" />
+    <MESSAGE value="Contact App about making inquiry" />
+    <MESSAGE value="Contact App about making inquiry finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Contact App about making inquiry finished" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="452" y="184" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597322672798">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="452" y="184" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1597322672798" />
+    <state x="530" y="279" key="Github.ShareDialog" timestamp="1596803704036">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="530" y="279" key="Github.ShareDialog/0.0.1366.768@0.0.1366.768" timestamp="1596803704036" />
+    <state x="447" y="85" key="RollbackChangesDialog" timestamp="1596879544321">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="447" y="85" key="RollbackChangesDialog/0.0.1366.768@0.0.1366.768" timestamp="1596879544321" />
+    <state x="184" y="14" key="SettingsEditor" timestamp="1596803580471">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1596803580471" />
+    <state x="275" y="115" key="Vcs.Push.Dialog.v2" timestamp="1597323558937">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="115" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1597323558937" />
+    <state x="339" y="25" width="670" height="676" key="search.everywhere.popup" timestamp="1596879541687">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="339" y="25" width="670" height="676" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1596879541687" />
+  </component>
+</project>
