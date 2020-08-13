@@ -24,7 +24,7 @@ SECRET_KEY = '18erp7m*-j=in)-wqr64l*mqh)2pin_x@%(y2#_=#(80y+egxa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['enciphererrealestate.herokuapp.com']
+ALLOWED_HOSTS = ['enciphererrealestate.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'realestatedb',
         'USER': 'postgres',
         'PASSWORD': '1234567890',
-        'HOST': 'localhost'
+        'HOST': '5432'
     }
 }
 
