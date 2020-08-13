@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60313df1-1c40-4456-9ece-da73b7675638" name="Default Changelist" comment="heroku manage.py">
+    <list default="true" id="60313df1-1c40-4456-9ece-da73b7675638" name="Default Changelist" comment="navbar responsive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/_topbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/_topbar.html" afterDir="false" />
     </list>
@@ -159,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597330168903</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="navbar responsive">
+      <created>1597339656359</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1597339656359</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,7 +196,8 @@
     <MESSAGE value="whitenoise deployments" />
     <MESSAGE value="postgres" />
     <MESSAGE value="heroku manage.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="heroku manage.py" />
+    <MESSAGE value="navbar responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="navbar responsive" />
   </component>
   <component name="WindowStateProjectService">
     <state x="452" y="184" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597322672798">
@@ -208,10 +216,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1596803580471" />
-    <state x="275" y="115" key="Vcs.Push.Dialog.v2" timestamp="1597330314693">
+    <state x="275" y="115" key="Vcs.Push.Dialog.v2" timestamp="1597339670576">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="115" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1597330314693" />
+    <state x="275" y="115" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1597339670576" />
     <state x="339" y="25" width="670" height="676" key="search.everywhere.popup" timestamp="1596879541687">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
