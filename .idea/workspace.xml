@@ -12,6 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60313df1-1c40-4456-9ece-da73b7675638" name="Default Changelist" comment="navbar responsive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/_alerts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/_alerts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/_topbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/_topbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
