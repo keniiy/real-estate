@@ -24,7 +24,7 @@ SECRET_KEY = '18erp7m*-j=in)-wqr64l*mqh)2pin_x@%(y2#_=#(80y+egxa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['enciphererrealestate.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['real-estatee.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
