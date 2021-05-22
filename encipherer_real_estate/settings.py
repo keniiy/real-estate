@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -143,3 +146,9 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
+#cloudinary
+cloudinary.config(
+  cloud_name = 'kenniy', 
+  api_key = '867929222155592', 
+  api_secret = 'WXebvm4LcndVc6n5aUHWtRp0vB8' 
+)
